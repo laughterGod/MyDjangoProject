@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ResultMeasure</title>
+</head>
+<body>
+{#    {% load static %}#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'HiMyserver/style.css' %}">#}
+    {% if result_list %}
+        <ul>
+            {% for result in result_list %}
+                {{result}}
+                <br />
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</body>
+</html>

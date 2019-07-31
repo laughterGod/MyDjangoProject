@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Question, Choice
+from ..models import Question, Choice
 from django.template import loader
 from django.http import Http404
 from django.urls import reverse
@@ -16,7 +16,7 @@ def index(request):
     }
     # return HttpResponse(template.render(context, request))
     return render(request, 'HiMyserver/index.html', context)
-    #return HttpResponse("Hello, world. You're at the Myserver index.")
+    # return HttpResponse("Hello, world. You're at the Myserver index.")
 
 
 def detail(request, question_id):
@@ -49,4 +49,6 @@ def vote(request, question_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('HiMyserver:results', args=(question.id,)))
-    #return HttpResponse("You're voting on question %s." % question_id)
+    # return HttpResponse("You're voting on question %s." % question_id)
+
+
