@@ -2,7 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Question, Choice
+from .models import Question, Choice, KS3Models
+from .views import ks3_storage_submit
 
 
 class ChoiceInline(admin.TabularInline):
@@ -20,6 +21,12 @@ class QuestionAdmin(admin.ModelAdmin):
         ('Question information', {'fields': ['question_text']}),
     ]
     inlines = [ChoiceInline]
+
+
+@admin.register(KS3Models)
+class KS3ModelsAdmin(admin.ModelAdmin):
+    def changelist_view(self, request, extra_content=None):
+        return ks3_storage_submit(request)
 
 
 admin.site.register(Question, QuestionAdmin)
