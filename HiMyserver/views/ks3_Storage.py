@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#coding=utf-8
+# coding=utf-8
 """
 Author:hanziguo(@kingsoft.com)
 Created:2018/11/07 15:12:23
@@ -7,12 +7,9 @@ desc:ks3 存储量
 """
 
 import requests
-import os
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
-
-home_dir = os.path.join(os.path.split(os.path.realpath(__file__))[0], os.path.pardir)
-conf_dir = home_dir + '/conf/'
 
 
 def ks3_storage(request):

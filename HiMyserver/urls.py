@@ -13,5 +13,6 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('translate/<str:content>/', views.translateyoudao, name='translate'),
     path('ks3/storage/', views.ks3_storage, name='ks3_storage'),
+    path('csv/', views.csv_file_view, name='csv_file'),
 
 ]
