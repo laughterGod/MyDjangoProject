@@ -20,11 +20,12 @@ def ks3_storage(request):
     http_url = "http://10.4.27.9:9998/query/normal"
     start_time = request.POST.get('start_time')
     end_time = request.POST.get('end_time')
+    user_id = request.POST.get('user_id')
     http_params = {'ver':'2.0.0',
                    'businessline':'ks3',
                    'start':start_time,
                    'end':end_time,
-                   'filter':'userid=2000085575 and storageclass not in (\'STANDARD_IA\',\'ARCHIVE\')',
+                   'filter':'userid=' + user_id + ' and storageclass not in (\'STANDARD_IA\',\'ARCHIVE\')',
                    'calcFunc':'sum(allSize) as size',
                    'returnField':'userid',
                    'timeInterval':'1d',
