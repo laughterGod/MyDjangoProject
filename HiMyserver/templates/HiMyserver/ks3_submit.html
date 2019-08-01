@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择时间段</title>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'HiMyserver/style.css' %}">
+    <form action="{% url 'HiMyserver:ks3_storage' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="start_time" id="starttime">
+        <label for="starttime">Start_time</label><br>
+        <input type="text" name="end_time" id="endtime">
+        <label for="endtime">End_time</label><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

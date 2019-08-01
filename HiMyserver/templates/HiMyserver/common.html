@@ -8,6 +8,7 @@
 {#    {% load static %}#}
 {#    <link rel="stylesheet" type="text/css" href="{% static 'HiMyserver/style.css' %}">#}
     {% if result_list %}
+{#        {{ result_list.0 }}#}
         <ul>
             {% for result in result_list %}
                 <li><a href="{% url 'HiMyserver:translate' result %}">{{result}}</a></li>
