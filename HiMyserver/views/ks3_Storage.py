@@ -46,7 +46,7 @@ def ks3_storage(request):
     for j in range(0, length):
         num_times = eval(num_data[j])/(1024**3)
         num_times = str(num_times) + '\n'
-        result = num_data_time_day[j] + "日存储storage量（GB）: " + num_times
+        result = num_data_time_day[j] + " 日存储量（GB）: " + num_times
         result_list.append(result)
 
     context = {
