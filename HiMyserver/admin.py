@@ -11,6 +11,7 @@ class ChoiceInline(admin.TabularInline):
     extra = 3
 
 
+@admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     # fields = ['pub_date', 'question_text']
     list_display = ('question_text', 'pub_date', 'was_published_recently')
@@ -29,4 +30,5 @@ class KS3ModelsAdmin(admin.ModelAdmin):
         return ks3_storage_submit(request)
 
 
-admin.site.register(Question, QuestionAdmin)
+# admin.site.register(Question, QuestionAdmin)
+# admin.site.register(KS3Models, KS3ModelsAdmin)
