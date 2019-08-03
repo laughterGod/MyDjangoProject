@@ -48,5 +48,8 @@ class BWSDayTransferModelsAdmin(admin.ModelAdmin):
         return eip_submit(request, type(self).__name__)
 
 
+admin.site.site_url = None
+
+
 # admin.site.register(Question, QuestionAdmin)
 # admin.site.register(KS3Models, KS3ModelsAdmin)
