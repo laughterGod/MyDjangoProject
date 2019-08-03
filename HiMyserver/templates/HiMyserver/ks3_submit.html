@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ks3存储量查询页</title>
+    <title>ks3计量查询页</title>
 </head>
 <body>
 {#    {% load static %}#}
 {#    <link rel="stylesheet" type="text/css" href="{% static 'HiMyserver/style.css' %}">#}
-    <form action="{% url 'HiMyserver:ks3_storage' %}" method="post">
+    {% if views_name_ks3 == 'KS3ModelsAdmin' %}
+        <form action="{% url 'HiMyserver:ks3_storage' %}" method="post">
+    {% elif views_name_ks3 == 'KS3ArchiveModelsAdmin' %}
+        <form action="{% url 'HiMyserver:ks3_storage_archive' %}" method="post">
+    {% endif %}
         {% csrf_token %}
         <label for="userid">&nbsp;&nbsp;用户&nbsp;ID：</label>
         <input type="text" name="user_id" id="userid" placeholder="2000085575" required><br>

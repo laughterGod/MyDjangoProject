@@ -2,8 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Question, Choice, KS3Models
-from .views import ks3_storage_submit
+from .models import *
+from .views import ks3_storage_submit, eip_submit
 
 
 class ChoiceInline(admin.TabularInline):
@@ -27,7 +27,25 @@ class QuestionAdmin(admin.ModelAdmin):
 @admin.register(KS3Models)
 class KS3ModelsAdmin(admin.ModelAdmin):
     def changelist_view(self, request, extra_content=None):
-        return ks3_storage_submit(request)
+        return ks3_storage_submit(request, type(self).__name__)
+
+
+@admin.register(KS3ArchiveModels)
+class KS3ArchiveModelsAdmin(admin.ModelAdmin):
+    def changelist_view(self, request, extra_content=None):
+        return ks3_storage_submit(request, type(self).__name__)
+
+
+@admin.register(EIPDayTransferModels)
+class EIPDayTransferModelsAdmin(admin.ModelAdmin):
+    def changelist_view(self, request, extra_content=None):
+        return eip_submit(request, type(self).__name__)
+
+
+@admin.register(BWSDayTransferModels)
+class BWSDayTransferModelsAdmin(admin.ModelAdmin):
+    def changelist_view(self, request, extra_content=None):
+        return eip_submit(request, type(self).__name__)
 
 
 # admin.site.register(Question, QuestionAdmin)

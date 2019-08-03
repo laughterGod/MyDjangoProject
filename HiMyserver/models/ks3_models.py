@@ -10,3 +10,13 @@ class KS3Models(models.Model):
     def __str__(self):
         return "ks3存储量"
 
+
+class KS3ArchiveModels(models.Model):
+
+    class Meta:
+        verbose_name = "ks3归档存储量计量查询"  # 表名改成中文名
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return "ks3归档存储量计量查询"
+
