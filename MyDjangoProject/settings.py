@@ -83,7 +83,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
-        'NAME': 'test',
+        'NAME': 'AutoTest',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST':'120.92.155.170',
