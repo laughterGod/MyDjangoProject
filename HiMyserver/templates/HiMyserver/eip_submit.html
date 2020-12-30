@@ -15,13 +15,13 @@
         {% endif %}
             {% csrf_token %}
             <label for="product_id">&nbsp;&nbsp;实例&nbsp;ID：</label>
-            <input type="text" name="product_id" id="product_id" placeholder="a16245f7-ca14-430a-b381-46a404718260" required><br>
+            <input type="text" name="product_id" id="product_id" placeholder="a16245f7-ca14-430a-b381-46a404718260" value="a16245f7-ca14-430a-b381-46a404718260" required><br>
             <label for="starttime">开始时间：</label>
-            <input type="text" name="start_time" id="starttime" placeholder="201901310000" required><br>
+            <input type="text" name="start_time" id="starttime" placeholder="201901310000" value="201901310000" required><br>
             <label for="endtime">结束时间：</label>
-            <input type="text" name="end_time" id="endtime" placeholder="201902010000" required><br>
+            <input type="text" name="end_time" id="endtime" placeholder="201902010000" value="201902010000" required><br>
             <label for="bandwidth">&nbsp;&nbsp;带&nbsp;&nbsp;&nbsp;宽&nbsp;&nbsp;：</label>
-            <input type="text" name="bandwidth" id="bandwidth" placeholder="200" ><br><br>
+            <input type="text" name="bandwidth" id="bandwidth" placeholder="200" value="200" ><br><br>
             <input type="submit" value="submit">
         </form>
     </div>
